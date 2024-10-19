@@ -1,0 +1,45 @@
+@use "mixins";        // Ensure mixins is a valid module
+@import "variables";  // Ensure variables file exists
+
+
+
+
+$colorMapBase: (
+    "primary": mixins.hex-to-rgb($primary),
+    "accent": mixins.hex-to-rgb($accent),
+    "secondary": mixins.hex-to-rgb($secondary),
+    "danger": mixins.hex-to-rgb($danger),
+    "warning": mixins.hex-to-rgb($warning),
+    "success": mixins.hex-to-rgb($success),
+    "info": mixins.hex-to-rgb($info),
+    "black": mixins.hex-to-rgb(#000),
+    "white": mixins.hex-to-rgb(#fff),
+);
+
+$colorMapSoft: (
+    "soft-primary": mixins.hex-to-rgb($soft-primary),
+    "soft-accent": mixins.hex-to-rgb($soft-accent),
+    "soft-secondary": mixins.hex-to-rgb($soft-secondary),
+    "soft-danger": mixins.hex-to-rgb($soft-danger),
+    "soft-warning": mixins.hex-to-rgb($soft-warning),
+    "soft-success": mixins.hex-to-rgb($soft-success),
+    "soft-info": mixins.hex-to-rgb($soft-info),
+
+);
+
+$colorMapBackground: (
+    "background": mixins.hex-to-rgb($background),
+    "background-light": mixins.hex-to-rgb($background-light),
+    "background-dark": mixins.hex-to-rgb($background-dark),
+    "background-muted": mixins.hex-to-rgb($background-muted),
+    "background-white": mixins.hex-to-rgb($background-white),
+);
+
+
+
+
+
+:root {
+    @include generate-css-variables($colorMap); // Ensure generate-css-variables is accessible
+}
+

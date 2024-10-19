@@ -1,0 +1,9 @@
+// Define hex-to-rgb function if not already defined
+@function hex-to-rgb($color) {
+    @return red($color), green($color), blue($color);
+}
+@mixin generate-css-variables($map) {
+    @each $key, $value in $map {
+        --#{$key}: #{$value};
+    }
+}
